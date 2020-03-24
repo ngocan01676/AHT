@@ -1,0 +1,98 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Contact\Block\ContactForm $block */
+?>
+<div class="wrapper">
+    <div class="sidebar">
+    <h1 class="contact-mobile"><?= $block->escapeHtmlAttr(__('Contact us')) ?></h1>
+<?php
+    echo $this->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('customer-care-sidebar')
+    ->toHtml();
+?>
+</div>
+<div class="content">
+    <?php
+    echo $this->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('content_contact_us')
+    ->toHtml();
+    ?>
+    <form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <div class="fieldset">
+        <div class="field name required">
+            <div class="control">
+                <input placeholder=" " name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('name') ?: $this->helper(\Magento\Contact\Helper\Data::class)->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                <label class="label" for="name"><span><?= $block->escapeHtml(__('Name')) ?></span></label>
+            </div>
+        </div>
+        <div class="field email required">
+            <div class="control">
+                <input placeholder=" " name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('email') ?: $this->helper(\Magento\Contact\Helper\Data::class)->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            </div>
+        </div>
+        <div class="field telephone">
+            <div class="control">
+
+                <input placeholder=" " name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('telephone')) ?>" class="input-text" type="text" />
+                 <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
+            </div>
+        </div>
+        <div class="field subject required">
+            <div class="control">
+                    <select>
+                        <option value="<?= $block->escapeHtml(__('Amending / Cancelling Order')) ?>"><?= $block->escapeHtml(__('Amending / Cancelling Order')) ?></option>
+                        <option value="<?= $block->escapeHtml(__('Returns')) ?>"><?= $block->escapeHtml(__('Returns')) ?></option>
+                        <option value="<?= $block->escapeHtml(__('Sizing')) ?>"><?= $block->escapeHtml(__('Sizing')) ?></option>
+                        <option value="<?= $block->escapeHtml(__('Shipping and Tracking')) ?>"><?= $block->escapeHtml(__('Shipping and Tracking')) ?></option>
+                        <option value="<?= $block->escapeHtml(__('Restocking')) ?>"><?= $block->escapeHtml(__('Restocking')) ?></option>
+                        <option value="<?= $block->escapeHtml(__('None of the above')) ?>"><?= $block->escapeHtml(__('None of the above')) ?></option>
+                    </select>
+             </div>
+        </div>
+        <div class="field comment required">
+            <div class="control">
+                <textarea placeholder="<?= $block->escapeHtmlAttr(__('Enter your message...')) ?>"  name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>" class="input-text" cols="5" rows="7" data-validate="{required:true}"><?= $block->escapeHtml($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('comment')) ?></textarea>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </div>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+<script>
+    require([
+    'jquery'
+],function($){
+    if($( window ).width() < 768 ){
+        $(".customer-care-sidebar ul").wrap('<div class="li-styled"></div>');
+        $('.li-styled').prepend("<div class ='custom'><a></a></div>");
+        var $firstChild = ".customer-care-sidebar ul li:first-child a";
+        var getLink = $($firstChild).attr('href');
+        $('.custom a').text($($firstChild).text()).attr('href',getLink);
+        $('.custom').on('click',function(){
+            $(this).toggleClass('active');
+            $(".customer-care-sidebar ul").slideToggle();
+        });
+    }
+});
+</script>

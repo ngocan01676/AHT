@@ -1,0 +1,122 @@
+.contact-index-index{
+    #maincontent{
+        max-width: 100%;
+        padding: 0;
+        padding: 0 32px;
+        .column.main{
+            padding-bottom: 83px;
+        }
+        .page-title-wrapper{
+            display: none;
+        }
+        .wrapper{
+            display: flex;
+            max-width: 1208px;
+            .sidebar{
+                max-width: 327px;
+                width: 327px;
+                .contact-mobile{
+                    display: none;
+                }
+            }
+            .content{
+                max-width: 881px;
+                margin-top: -10px;
+                div[data-element="inner"] {
+                    padding:0 !important;
+                }
+                .form.contact{
+                    width: 100%;
+                    .fieldset{
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-top: 15px;
+                        margin-bottom:0;
+                        .field{
+                            max-width: 431px;
+                            margin-bottom: 18px;
+                            label::after{
+                                content: '';
+                            }
+                            width:~"calc((100% - 18px) / 2)"; 
+                            &:nth-child(2n+1){
+                                margin-right: 18px;
+                            }
+                            &.comment {
+                                max-width: 100%;
+                                width: 100%;
+                                margin-right: 0;
+                                textarea{
+                                    padding: 16px 12px 7px 14px;
+                                }
+                            }
+
+                        }
+                    }
+                    .actions-toolbar{
+                        .action.submit.primary{
+                            padding: 0 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px){
+    .contact-index-index{
+        #maincontent{
+            padding: 0 12px;
+            .page-title-wrapper{
+                display: none;
+            }
+            .page.messages{
+                margin-top:0;
+            }
+            .column.main{
+                padding-bottom: 0px;
+            }
+            .wrapper{
+                display: flex;
+                flex-direction: column;
+                .sidebar{
+                    max-width: 100%;
+                    width: 100%;
+                    .contact-mobile{
+                        text-transform: uppercase;
+                        text-align: center;
+                        display: block;
+                        min-height: 17px;
+                        color: #000000;
+                        font-family: BrownStd;
+                        font-size: 14px;
+                        letter-spacing: 0.5px;
+                        line-height: 17px;
+                        margin-bottom: 14px;
+                    }
+                    h5{
+                        display: none;
+                    }
+                }
+                .content{
+                    h2{
+                        display: none;
+                    }
+                    margin-top:0;
+                    .form.contact{
+                        width: 100%;
+                        .fieldset{
+                            .field{
+                                width: 100%;
+                                max-width: 100%;
+                                &:nth-child(2n+1){
+                                    margin-right: 0 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

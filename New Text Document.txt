@@ -1,0 +1,38 @@
+https://convertdigital.atlassian.net/browse/BKR-242
+https://convertdigital.atlassian.net/browse/BKR-243
+MANGENTO 2 EE PRO
+
+GIT:
+https://bitbucket.org/convert/bnkr/
+longvd@arrowhitech.com / admin123
+
+CLONE GIT:
+SSH: git clone git@bitbucket.org:convert/bnkr.git
+HTTPS: git clone https://longvd@bitbucket.org/convert/bnkr.git
+
+BRANCH: develop
+
+
+CONVERT JIRA
+Jira
+https://convertdigital.atlassian.net
+vdlit1@gmail.com / abc123@1
+Invision App
+	vdlit1@gmail.com / admin123
+
+
+
+DEV SITE: 
+http://72.arrowhitech.net/g1/convertrnbk/
+http://72.arrowhitech.net/g1/convertrnbk/admin
+admin / Admin$123
+
+
+CONVERT SITE:
+http://bnkr-us.convert.build/
+https://bnkr.convert.build/admin
+developer2 / dev@convert2020
+
+convertdigital/cdigital19
+
+
