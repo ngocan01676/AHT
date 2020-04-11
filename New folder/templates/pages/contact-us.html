@@ -1,0 +1,47 @@
+{{#partial "page"}}
+<main class="page page-contact">
+    {{#unless theme_settings.hide_contact_us_page_heading }}
+    <div class="title-cms-page">
+        <h1 class="page-heading">{{page.title}}</h1>
+        <div class="short_des_contact_wrap">
+            {{{page.content}}}
+        </div>
+      
+      
+        <img src="{{ cdn 'assets/img/bottomtittle.jpg' }}" alt="">
+    </div>
+    {{/unless}}
+
+    {{#if forms.contact.success}}
+        <div class="container" >
+            <div class="alertBox alertBox--success">
+                <img src="{{cdn 'assets/img/tick-icon.svg'}}">
+                <span>{{{lang 'forms.contact_us.successful'}}}</span>
+                <i class="far fa-times"></i>
+            </div>
+        </div>
+        {{else}}
+        <div id="contact-us-page" class="page-content page-content--centered clearfix">
+            <div class="content-reseller-page">
+                {{{page.content}}}
+            </div>
+            <div class="content-right content-custom-work-page ">
+                  {{{page.content}}}
+            </div>
+            <div class="form-left">
+                {{> components/page/contact-us-form}}
+            </div>
+            <div class="content content-contact-page ">
+                 {{{page.content}}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="review">
+        <!-- {{> components/custom-review/review-horizontal}} -->
+        <div class="testimonial-banner-bottom"></div>
+    </div>
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

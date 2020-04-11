@@ -1,0 +1,148 @@
+.video-tutorials_wrap .fancybox-is-open .fancybox-bg{
+	background:#000 !important;
+	opacity: 0.35 !important;
+}
+main.page.video-tutorials{
+	@media (min-width:768px){
+		.banner-cms{
+			min-height: 480px;
+			padding-top:156px;
+		}
+	} 
+	.content_video{
+	 	width: 100%;
+	 	max-width: 1272px;
+	 	margin: 0 auto;
+	 	margin-top:36px;
+	 	padding-bottom: 68px;
+	 	ul{
+	 		margin-left: 0;
+	 	}
+	}
+	ul{	
+		list-style: none;
+		&:after,&:before{
+			display: table;
+			content: " ";
+			clear: both;	
+		}
+		li{
+			float: left;
+			width: 50%;
+			padding: 12px;
+			position:relative;
+			div{
+				position: absolute;
+				z-index: 1;
+				padding-left: 32px;
+				bottom: 45px;
+			}
+			h3 {
+				color: #FFFFFF;
+				bottom:89px;
+				margin: 0;
+				margin-bottom: 12px;
+			}
+			a{
+				height: 44px;
+				width: 140px;
+				border-radius: 22px;
+				background-color: #665AFF;
+				display: block;
+				text-align: center;
+				padding-top: 12px;
+				span {
+					color: #FFFFFF;
+					font-family: Roboto;
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 16px;
+					&:before{
+						font-size: 12px;
+						font-family: "Font Awesome 5 Pro";
+						font-weight: 600;
+						content: "\f04b";
+						display: inline-block;
+						margin-right: 5px;
+						line-height: 13px;
+						vertical-align: 1px;
+					}
+				}
+				&:hover,&:focus,&:active{
+					background: #462AD6;
+					text-decoration: none;
+					outline: none;
+				}
+			}
+		}
+	
+	}
+}
+.button_video{
+	width: auto !important;
+	color: #FFFFFF !important;
+	opacity: 1 !important;
+	font-family: Mont;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: -0.5px;
+	line-height: 32px;
+	white-space: nowrap;
+	right: 6px !important;
+	padding-right:0 !important;
+	i{
+		margin-left: 8px;
+	}
+}
+@media (max-width: 767px){
+
+	main.page.video-tutorials{
+		.banner-cms{
+			min-height: 300px;
+			padding-top:36px;
+		}
+		ul{
+			margin-left: 0;
+			margin-bottom: 0;
+			li{
+				width: 100%;
+				padding-left:16px;
+				padding-right:16px;
+				padding-bottom:8px;
+				padding-top:8px;
+				div{
+					padding-left:12px;
+				}
+				h3{
+					font-size: 20px;
+				}
+			}
+		}
+		.button_video{
+			font-size: 24px;
+		}
+		.content_video{
+			margin-top: 20px;
+			padding-bottom:40px;
+		}
+	}
+	.video-tutorials_wrap{
+		.fancybox-slide{
+			padding-left:16px !important;
+			padding-right:16px !important;
+		}
+		
+	}
+}
+@media (max-width: 400px){
+	main.page.video-tutorials{
+		.banner-cms{
+			min-height: 175px;
+			max-height: 175px;
+		}
+		.banner-cms::after {
+			bottom: -31px;
+			height: 25%;
+		}
+	}
+}

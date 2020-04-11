@@ -1,18 +1,51 @@
+03/04/2020 safe-213 0.5hour
+31/03/2020 safe-213 6 hours
+06/04/2020 safe-213 0.5hours
+
+waynernick@gmail.com
+Admin$123
+______________________________________________________________________________
+http://pm.arrowhitech.net:8080/secure/RapidBoard.jspa?rapidView=574&projectKey=BKR&view=detail&selectedIssue=BKR-67
+https://bnkr-us.convert.build/sample-product.html
+https://bnkr.convert.build/new-places-short-sleeve-dress-marigold-1.html
+https://bnkr-us.convert.build/sample-product.html
+
+theme get -p=d26ccb6faae0adc5f436c931f17f4a11 -s=maroubra-takeaway.myshopify.com -t=93463576707
+
+
+
+
+
 Page Contact:
 https://convertdigital.atlassian.net/browse/BKR-242
 https://convertdigital.atlassian.net/browse/BKR-243
+http://pm.arrowhitech.net:8080/browse/BKR-47
+http://pm.arrowhitech.net:8080/browse/BKR-48
 _____________________________________________________
 
+Page checkout success
 https://convertdigital.atlassian.net/browse/BKR-237
 https://convertdigital.atlassian.net/browse/BKR-238
+http://pm.arrowhitech.net:8080/browse/BKR-42
+http://pm.arrowhitech.net:8080/browse/BKR-43
 
 
 
+____________________________________________________
+
+Page Sizing
+https://convertdigital.atlassian.net/browse/BKR-248
+https://convertdigital.atlassian.net/browse/BKR-249
+http://pm.arrowhitech.net:8080/browse/BKR-53
+http://pm.arrowhitech.net:8080/browse/BKR-54
 
 
-
-
-
+_____________________________________________________
+page shipping
+http://pm.arrowhitech.net:8080/browse/BKR-51
+http://pm.arrowhitech.net:8080/browse/BKR-52
+https://convertdigital.atlassian.net/browse/BKR-246
+https://convertdigital.atlassian.net/browse/BKR-247
 _____________________________________________________
 MANGENTO 2 EE PRO
 
@@ -49,4 +82,31 @@ developer2 / dev@convert2020
 
 convertdigital/cdigital19
 
+
+__________________________________________________________________________________________________________________
+Bust
+Measure the fullest part of your bust.Keep your arms down by your side.
+Waist
+Measure the narrowest part of your natural waistline. You will find it above your navel and below your ribcage.
+Hip
+Measure the fullest part of your natural hipline.
+Size Comparison
+Compare the measurements of our items with your own to help you decide which size to buy.
+General Notes
+Please note this is only a general guide to our sizing, and the measurements provided are to help you find your approximate size in C/MEO Collective, Keepsake, Finders Keepers and The Fifth Label items. Many styles will have their own design features that might cause them to vary slightly from this guide. If you are unsure about your size or the fit of a particular item, please get in touch with our customer care stylists on Live Chat or at support@bnkr-store.com and they can provide you with more detailed sizing information. 
+
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/other.less
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/js/sizing.js
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/other.less
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/sizing.less
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/checkout.less
+
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/sizing.less BKR-249
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/js/sizing.js BKR-249
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/myaccount.less BKR-287
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/Magento_Sales/templates/order/recent.phtml BKR-287
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/Magento_Sales/templates/order/history.phtml BKR-287
+
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/web/css/checkout.less BKR-237
+/var/www/html/g1/convertrnbk/app/design/frontend/BNKR/default/Magento_Checkout/templates/success.phtml BKR-237
 

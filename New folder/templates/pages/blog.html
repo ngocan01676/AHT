@@ -1,0 +1,67 @@
+---
+blog:
+    posts:
+        limit: 200
+        pages: 200
+        summary: 354
+---
+{{#partial "page-product"}}
+{{#unless theme_settings.hide_blog_page_heading }}
+    <div class="banner-top-blog" style="background-image: url('https://cdn11.bigcommerce.com/s-u81rarrvlz/product_images/uploaded_images/bg-blog.jpg')">
+        <div>
+            <!-- {{> components/common/responsive-img
+                    image=image
+                    class="only-desktop"
+                    fallback_size=../theme_settings.blog_image_banner_size
+                    lazyload=../theme_settings.lazyload_mode
+                    default_image=../theme_settings.blog_image_banner
+            }} -->
+          <!--  <img src="{{getImage theme_settings.blog_image_banner 1x="3200x960"}}" srcset="{{getImageSrcset theme_settings.blog_image_banner }}" /> -->
+           <!--  <img class="only-desktop" title="home-banner-x1.png" src="https://cdn11.bigcommerce.com/s-u81rarrvlz/product_images/uploaded_images/home-banner-x1.png" alt="home-banner-x1.png">
+            <img class="only-mobile" title="home-banner-mobile.png" src="https://cdn11.bigcommerce.com/s-u81rarrvlz/product_images/uploaded_images/home-banner-mobile.png" alt="home-banner-mobile.png"> -->
+        </div>
+        <div class="content-text">
+            <div class="container">
+                <div >
+                    <h1 class="page-heading">{{ blog.name }}</h1>
+                    <p>A selection of useful articles and information.</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+{{/unless}}
+<main class="page">
+    <div class="container">
+        <ul class="tags tags_filter hide">
+            <h4 class="filter_title"><i class="fa fa-filter"></i>Filters</h4>
+            <ul class="filter_content">
+                {{#each blog.posts}}
+                    {{#if this.tags}}
+                        {{#each this.tags}}
+                            <li class="tag {{toLowerCase ( camelcase name )}}" data-name="{{toLowerCase ( camelcase name )}}">
+                                <button href="{{url}}"  class="blog_task_filter" data-name="{{name}}"><i class="fal fa-times"></i>{{name}}<span class="number_product"></span></button>
+                            </li>
+                        {{/each}}
+                    {{/if}}
+                {{/each}} 
+                <li class="clean_blog"><a href="/blog" class="clean_blog_button"><i class="fal fa-redo"></i>Clear Filters</a></li> 
+            </ul>
+           
+        </ul>
+        <div class="blog_page" id="blog_listing">
+            <div class="row">
+            {{#each blog.posts}}
+                {{> components/blog/post-listing post=this}}
+            {{/each}}
+            </div>
+        </div>
+        <div  class="pagination">
+            <ul id="pagin" class="pagination-list">
+             
+            </ul>
+        </div>
+    </div>
+</main>
+
+{{/partial}}
+{{> layout/base}}

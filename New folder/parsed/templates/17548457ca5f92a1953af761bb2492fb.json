@@ -1,0 +1,1 @@
+{"components/common/alert-info":"<div class=\"alertBox alertBox--info\">\r\n    <img src=\"{{cdn 'assets/img/bell-icon.svg'}}\">\r\n    <span>{{{this}}}</span>\r\n    <i class=\"far fa-times\"></i>\r\n</div>\r\n"}

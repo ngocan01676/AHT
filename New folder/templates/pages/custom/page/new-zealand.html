@@ -1,0 +1,32 @@
+{{#partial "hero"}}
+
+    <main class="page cms-page-own  {{dashcase page.title}}">
+        <div class="page-content">
+			 {{{page.content}}}
+			<div class="block-content-2-gray gray-last">
+				<div class="block-content-gray">
+					<div class="container">
+						<div class="block-content-2-column">
+							<div class="block-content-left">
+								<div class="block-content-text">
+									<h3>Blank SWMS Master Template</h3>
+									<p>Write your own Work Method Statement using our blank SWMS template.</p>
+									<a class="btn button button-primary btn-primary" href="http://www.safetyculture.com.au/content/docs/NZ_SWMS_Template.doc">Download Free Template</a>
+								</div>
+							</div>
+							<div class="block-content-right">
+								<div class="custom-subscription-form">
+									{{> components/common/custom-subscription-form}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        </div>
+    </main>
+
+{{/partial}}
+
+{{> layout/base}}

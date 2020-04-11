@@ -1,0 +1,76 @@
+<ul class="tabs" data-tab>
+    <li class="tab is-active  tab-1">
+        <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
+    </li>
+    <div class="tabs-contents tabs-contents-1">
+        <div class="tab-content" id="tab-description">
+            {{{product.description}}}
+        </div>
+    </div>
+    <li class="tab  tab-2  {{#each product.custom_fields}}{{#if name '==' 'PDF Download'}}show{{/if}}{{/each}} " >
+         <a class="tab-title" href="#tab-document">Document Sample</a>
+    </li>
+    <div class="tabs-contents tabs-contents-2 {{#each product.custom_fields}}{{#if name '==' 'PDF Download'}}show{{/if}}{{/each}}">
+        <div class="tab-content" id="tab-document">
+            {{#each product.custom_fields}}
+                {{#if name '==' 'PDF Download'}}
+                    <h5>PDF Download</h5>
+                    <a href="/content/PDFSample/{{value}}" download>PDF File</a>
+                    <div class="pdf_sample">
+                    <embed src="/content/PDFSample/{{value}}" width="100%" height="375" type='application/pdf' id="productSampleEmbed">  
+                  <!--   <iframe src="/content/PDFSample/{{value}}" id="theFrame" scrolling="auto"  width="100%" height="500px" style="margin-top: 10px"> -->
+                    <!-- </iframe> -->
+                     </div>
+                
+                {{/if}} 
+            {{/each}} 
+        </div>
+   </div>
+<li class="tab tab-3 ">
+   <a class="tab-title" href="#tab-video">Tutorials</a>
+</li>
+<div class="tabs-contents  tabs-contents-3">
+    <div class="tab-content" id="tab-video">
+        <div class="video_list" data-id-video="160990132">
+            <a data-fancybox="" href="https://player.vimeo.com/video/160990132?byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=true" aria-selected="false">
+                <i class="fas fa-play-circle"></i>
+            </a>
+            <img class=" ls-is-cached lazyloaded" src="https://www.safetyculture.com.au/content/img/video_add-your-company-logo.jpg">
+        </div>
+        <div class="video_list" data-id-video="162023687">
+            <a data-fancybox="" href="https://player.vimeo.com/video/162023687?byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=true" aria-selected="false">
+              <i class="fas fa-play-circle"></i>
+          </a>
+          <img class=" ls-is-cached lazyloaded" src="https://www.safetyculture.com.au/content/img/video_customise-your-swms.jpg">
+      </div>
+      <div class="video_list" data-id-video="133303220">
+        <a data-fancybox="" href="https://player.vimeo.com/video/133303220?byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=true" aria-selected="false">
+            <i class="fas fa-play-circle"></i>
+        </a>
+        <img class=" ls-is-cached lazyloaded" src="https://www.safetyculture.com.au/content/img/video_how-to-download-iauditor-swms2.jpg">
+    </div>
+    <div class="video_list" data-id-video="162023353">
+        <a data-fancybox="" href="https://player.vimeo.com/video/162023353?byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=true" aria-selected="false">
+         <i class="fas fa-play-circle"></i>
+     </a>
+     <img class=" ls-is-cached lazyloaded" src="https://www.safetyculture.com.au/content/img/video_downloading-for-ms-word.jpg">
+     
+ </div>
+
+</div>
+</div>
+{{#all settings.show_product_reviews theme_settings.show_product_reviews_tabs product.reviews.total}} 
+<li class="tab tab-4 ">
+    <a class="tab-title productView-reviewTabLink " href="#tab-reviews">Reviews</a>
+</li>
+{{/all}} 
+<div class="tabs-contents tabs-contents-4">
+    {{#all settings.show_product_reviews theme_settings.show_product_reviews_tabs}}
+    <div class="tab-content" id="tab-reviews">
+     {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+  </div>
+ {{/all}}
+</div>
+  
+</ul>
+

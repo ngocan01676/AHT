@@ -1,0 +1,1 @@
+{"components/amp/common/alert-success":"<div class=\"alertBox alertBox--success\">\r\n    <img src=\"{{cdn 'assets/img/tick-icon.svg'}}\">\r\n    <span>{{{this}}}</span>\r\n    <i class=\"far fa-times\"></i>\r\n</div>\r\n"}

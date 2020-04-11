@@ -1,0 +1,53 @@
+{{#if this.items}}
+    <div class="facetedSearch-refineFilters sidebarBlock">
+        <h5 class="sidebarBlock-heading">
+            {{lang 'search.faceted.selected.title'}}
+        </h5>
+        <ul class="inlineList inlineList--labels">
+            {{#each this.items}}
+                <li>
+                    <a
+                        href="{{ url }}"
+                        class="facetLabel"
+                        rel="nofollow"
+                        data-faceted-search-facet>
+                        <svg class="icon">
+                            <use xlink:href="#icon-close" />
+                        </svg>
+
+                        {{#if facet '===' 'rating'}}
+                            {{lang 'search.faceted.selected.rating-label' rating=title}}
+                        {{else}}
+                            {{#if param_name '==' 'in_stock'}}
+                                Other: {{ title }}
+                            {{else}}
+                                {{#if param_name '==' 'is_featured'}}
+                                    Other: {{ title }}
+                                {{else}}
+                                    {{#if param_name '==' 'industry'}}
+                                        Industry: {{ title }}
+                                    {{else}}
+                                        {{#if param_name}}
+                                            {{param_name}}: {{ title }}
+                                        {{else}}
+                                            Price: {{ title }}
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+        {{#if remove_all_url}}
+            <a href="{{ remove_all_url }}" data-faceted-search-facet>
+                {{lang 'search.faceted.selected.clear-all'}}
+            </a>
+        {{/if}}
+    </div>
+    {{else}}
+   <!--  <div class="filter-results">
+        <h6><i class="fal fa-filter"></i>Filter Results</h6>
+    </div> -->
+{{/if}}

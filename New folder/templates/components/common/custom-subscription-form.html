@@ -1,0 +1,22 @@
+<h3>Want to be notified?</h3>
+<form class="form" id="form-newletter" action="{{urls.subscribe.action}}" method="post">
+    <fieldset class="form-fieldset">
+        <input type="hidden" name="action" value="subscribe">
+         <div class="form-field">
+            <label class="form-label" for="nl_first_name">Name *</label>
+        <input type="text" name="nl_first_name" value="" required="">
+        </div>
+        <input type="hidden" name="check" value="1">
+        <div class="form-field">
+            <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
+            <div class="form-prefixPostfix wrap">
+                <label class="form-label" for="nl_email">Email Address *</label>
+                <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="" required>
+                <input class="button button-primary form-prefixPostfix-button--postfix" type="submit" value="Notify me">
+            </div>
+            {{#if settings.show_newsletter_summary }}
+                <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>
+            {{/if}}
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,15 @@
+{{#partial "hero"}}
+
+    <main class="page custom-faq-page">
+        <div class="page-content">
+            {{#replace '%%Syndicate%%' page.content}}
+                {{> components/page/rss_feed}}
+            {{else}}
+                {{{page.content}}}
+            {{/replace}}
+        </div>
+    </main>
+
+{{/partial}}
+
+{{> layout/base}}

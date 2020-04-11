@@ -1,0 +1,29 @@
+<div class="body" data-currency-code="{{currency_selector.active_currency_code}}">
+	{{#if banners.bottom}}
+        <div class="banner_row">
+            {{#each banners.bottom_metadata}}
+                {{#if this.banner-name '==' 'banner_row_1'}}
+                    {{{this.content}}}
+                {{/if}}
+            {{/each}}
+            {{#each banners.bottom_metadata}}
+                {{#if this.banner-name '==' 'banner_row_2'}}
+                    {{{this.content}}}
+                {{/if}}
+            {{/each}}
+            
+        </div>
+    {{/if}}
+    {{#block "hero"}} {{/block}}
+  
+	    {{#block "page-product"}} 
+          
+	    {{/block}}
+    <div class="container {{page_type}}-container">
+        {{#block "page"}} {{/block}}
+    </div>
+    {{#block "product-home"}} {{/block}}
+    {{#block "page-blog"}} {{/block}}
+    {{> components/common/modal}}
+    {{> components/common/alert-modal}}
+</div>

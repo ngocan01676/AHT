@@ -1,0 +1,1 @@
+{"components/amp/common/alert-error":"<div class=\"alertBox alertBox--error\">\r\n    <img src=\"{{cdn 'assets/img/error-icon.svg'}}\">\r\n    <span>{{{this}}}</span>\r\n    <i class=\"far fa-times\"></i>\r\n</div>\r\n"}

@@ -1,0 +1,29 @@
+<ul class="productGrid">
+    {{#each products}}
+    <li class="product">
+        {{#inArray category "Safe Work Method Statements (SWMS)/SWMS Value Packs"}}
+           <span class="value-pack">Value Pack</span>
+        {{else}}
+        {{/inArray}}
+            {{>components/products/card settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+    </li>
+    {{/each}}
+</ul>
+<ul class="productGrid productlist-custom">
+{{#each products}}
+
+{{#inArray category "Safe Work Method Statements (SWMS)/SWMS Value Packs"}}
+<li class="product value-pack">
+<span class="value-pack">Value Pack</span>
+{{>components/products/card-list settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+</li>
+{{else}}
+<li class="product">
+
+{{>components/products/card-list settings=../settings show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+</li>
+{{/inArray}}
+
+
+{{/each}}
+</ul>

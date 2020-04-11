@@ -1,0 +1,54 @@
+{{#partial "hero"}}
+
+<main class="page  request-a-quote">
+	<div class="page-content">
+		{{{page.content}}}
+		<div class="container">
+			<a href="/content/product_safe_dev.json" style="display: none" class="link_json_file">link_json</a>
+			<div class="search-form"><input id="searchInput" placeholder="Filter SWMS"></div>
+			<div class="product_listing_quote">
+
+			</div>
+			<div class="productView" style="display: none">
+				<div class="productView-options">
+					<form class="form" action="/cart.php" method="post" enctype="multipart/form-data"
+						data-cart-item-add="">
+						<input type="hidden" name="action" value="add" />
+						<input type="hidden" name="product_id" value=" " />
+						<div style="display: none;" data-product-option-change="">&nbsp;</div>
+						<input id="qty[]" class="form-input form-input--incrementTotal" type="tel" name="qty[]"
+							value="1" data-quantity-min="0" data-quantity-max="0" />
+						<div class="form-action">
+							<button id="qn-add-to-quote"
+								class="qn-add-to-quote button button--secondary button button--secondary"
+								onclick="QN.add_product(event, false)">Add To Quote</button>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div>
+
+		</div>
+
+	</div>
+
+</main>
+{{/partial}}
+
+{{> layout/base}}
+
+
+
+
+
+
+<style type="text/css">
+	/*.vex.vex-theme-flat-attack,.vex-overlay{
+		display: none !important;
+	}
+	body.vex-open{
+		overflow:auto !important;
+	}*/
+</style>

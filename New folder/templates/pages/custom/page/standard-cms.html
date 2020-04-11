@@ -1,0 +1,16 @@
+
+{{#partial "hero"}}
+<main class="page standard-cms {{toLowerCase ( dashcase page.title )}}_cms">
+
+	{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    <div class="container">
+    	<div class="standard-cms-container">
+    		<h2> {{{page.title}}}</h2>
+       		{{{page.content}}}
+    	</div>
+    </div>
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

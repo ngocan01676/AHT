@@ -1,0 +1,279 @@
+//404 page
+.page_404_wrap{
+	background-color: #FBFCFD;
+}
+.page .page_404{
+	padding-top: 157px;
+	min-height: 588px;
+	padding-bottom: 329px;
+	h2{
+		margin-top: 0;
+		margin-bottom: 24px;
+	}
+}
+.btn_404{
+  width: 138px;
+  margin-bottom: 0;
+}
+@media (max-width: 767px){
+	.page .page_404{
+		padding-top: 50px;
+		min-height: 0;
+		padding-bottom: 100px;
+	}
+}
+//page subcibe
+.newsletter_subscribe-container{
+	padding-top:80px;
+	padding-bottom:80px;
+	.alertBox{
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+}
+// standard-cms-container
+.standard-cms{
+	background-color: #FBFCFD;
+	ul.breadcrumbs{
+		line-height: normal;
+	}
+}
+// .standard-cms-review-container{
+// 	float: left;
+// 	width: calc(100% -  824px);
+// }
+.standard-cms-container{
+	float: left;
+	margin-top: 25px;
+	margin-bottom: 72px;
+	box-sizing: border-box;
+	max-width: 824px;
+	border: 1px solid #EFF0F2;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.06);
+	padding-left: 39px;
+	padding-right:48px;
+	padding-bottom:39px;
+	p,ul,h3{
+		margin:0;
+	}
+	ol{
+		margin-left: 25px;
+		li{
+			margin-bottom: 5px;
+		}
+	}
+	ul{
+		//color: #485C7D;
+		margin-left: 0;
+		list-style: none;
+		li{
+			padding-left: 35px;
+			line-height: 22px;
+			margin-bottom: 10px;
+			position:relative;
+			&:before{
+				display: inline-block;
+				vertical-align: middle;
+				content: "•";
+				top:1px;
+				left: 10px;
+				position:absolute;
+			}
+
+		}
+	}
+	h2{
+		border-bottom: 1px solid  #EBEBEB;
+		text-transform: capitalize;
+		padding-bottom:23px;
+		margin-bottom: 33px;
+		//color: #061B41;
+	}
+	//content
+	// h2 + p,
+	// h2 + p +p{
+	// 	color: #3F5271;
+	// }
+	// ul + p{
+	// 	margin-top: 15px;
+	// 	color: #485C7D;
+	// 	margin-bottom: 8px;
+	// }
+
+	h3{
+		//color: #032769;
+		padding-top: 15px;
+		margin-bottom: 8px;
+		span{
+			color: #032769;
+		}
+	}
+	p{
+		//margin-bottom: 10px;
+	}
+	.color_2{
+		color: #7D94B0;
+	}
+	a{
+		text-decoration: none;
+	}
+	a:focus,a:active{
+		color: #665AFF;
+	}
+	
+}
+@media (max-width: 767px){
+	.standard-cms{
+		border-top:1px solid  #EFF0F2;
+		background-color: #FFFFFF;
+
+	}
+	.standard-cms-container{
+		border:0;
+		padding:0;
+		box-shadow: none;
+		margin-top: 21px;
+		margin-bottom: 15px;
+		h2{
+			margin-top: 0;
+			margin-bottom: 21px;
+		}
+	}
+}
+//workplace-health-template
+.workplace-health-template{
+	padding-bottom:48px;
+	.listing_workplace{
+		max-width: 1312px;
+	}
+	.banner-cms{
+		padding-top:156px;
+	}
+	h1{
+		margin-top: 0;
+	}
+	h2{
+		text-align: center;	
+		margin-top: 50px;
+		margin-bottom: 15px;
+	}
+	ul{
+		margin:0;
+		padding:0;
+		list-style: none;
+		&:after{
+			display:table;
+			clear: both;
+			content: "";
+		}
+		li{
+			float: left;
+			width: calc(50% - 32px);
+			box-sizing: border-box;
+			// height: 240px;
+			
+			border: 1px solid #EFF0F2;
+			border-radius: 0 0 20px 20px;
+			background-color: #FFFFFF;
+			box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.06);
+			&:before{
+				border-top:6px solid  #665AFF;
+				border-top-left-radius:6px;
+				border-top-right-radius:6px;
+				width: 100%;
+				display: block;
+				content: " ";
+				position:absolute;
+				top: 0;
+				left: 0;
+			}
+			margin: 16px;
+			padding:43px 39px 39px 39px;
+			min-height: 240px;
+			position:relative;
+			h3{
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+			p{
+				margin-bottom: 0;
+				padding-bottom:50px;
+			}
+			a{
+
+				// height: 44px;
+				// width: 194px;
+				border-radius: 22px;
+				background-color: #665AFF;
+				text-decoration: none;
+				color: #FFFFFF;
+				text-align: center;
+				padding:12px 22.845px;
+				font-size: 16px;
+				font-weight: 500;
+
+				position:absolute;
+				bottom:39px;
+				&:hover{
+					background-color: #462AD6;
+				}
+			}
+		}
+		li:nth-child(2n+1){
+			clear: left;
+		}
+	}
+}
+@media (max-width:767px){
+	.workplace-health-template{
+		padding-bottom:42px;
+		.banner-cms{
+			min-height: 270px;
+			padding-top:34px;
+			h1{
+				margin-top: 0;
+			}
+		}
+		h2{
+			
+			margin-bottom: 14px;
+		}
+		ul{
+			li{
+				width: 100%;
+				margin-left: 0;
+				margin-right: 0;
+				margin-top: 8px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+} 
+@media (max-width:400px){
+	.workplace-health-template{
+
+		h2{
+			margin-top: 30px;
+		}
+		ul{
+			li{
+				padding:24px;
+				min-height: 0;
+				h3{
+					margin-bottom: 5px;
+				}
+				p{
+					padding-bottom:15px;
+				}
+				a{
+					position:static;
+					line-height: 44px;
+				}
+			}
+
+		}
+
+	}
+}

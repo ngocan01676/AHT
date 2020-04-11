@@ -1,0 +1,128 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: 16
+---
+{{inject "categoryProductsPerPage" 16}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "hero"}}
+<div class="banner-cate">
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    <div class="container">    
+        <div class="banner-cate-items">
+            <div class="banner-cate-left">
+                <h1 class="page-heading">{{category.name}}</h1>
+                {{#if category.description}}
+                    <div class="banner-cate-des">
+<!--                         {{#each (split category.description '"') }}
+                            {{#if @index '===' 0 }}
+                                {{{ellipsis this 190}}}
+                                <a class="button-des showmore" href="#category-description">Show more</a>
+                                {{else}}"{{{ellipsis this 190}}}
+                            {{/if}}
+                        {{/each}} -->
+                        <a class="button-des showmore" href="#category-description">Show more</a>
+                    </div>
+                    <div class="banner-cate-des-hidden">
+                        {{{category.description}}}
+                        <a class="button-des showless" href="#">Show less</a>
+                    </div>
+                {{/if}}
+            </div>
+            <div class="banner-cate-right">
+                <!-- <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage category.image 'zoom_size'}}"> -->
+                <div class="image-upload"></div>
+                <div class="banner-cate-right-content">
+                    <!-- {{#if banners.top}}
+                        {{#each (limit banners.top_metadata 5)}}
+                            {{{this.content}}}
+                        {{/each}}
+                    {{/if}} -->
+                    <a id="cate-play-video" href="https://vimeo.com/394334982?byline=0&amp;portrait=0&amp;badge=0&amp;autoplay=true" title="SafetyCulture - How to Add Your Company Logo">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <p>WHY DOCS by SAFETYCULTURE?</p>
+                </div>
+            </div>
+        </div>
+        <!-- <p>{{json category}}</p> -->
+        <!-- {{> components/products/filter sort=pagination.category.sort}} -->
+    </div>
+</div>
+
+<div class="container">
+    <div class="cate-sortby">
+        <div class="showing-products">
+            {{#if category.count}}
+            <span>Showing {{category.count}} of {{category.total_products}} Products</span>
+            {{else}}
+            <span>Showing {{category.total_products}} of {{category.total_products}} Products</span>
+            {{/if}}
+        </div>
+        <div class="custom-sortby">
+            <div class="custom-grid">
+                <span class="custom-grid-full">
+                    <i class="far fa-bars"></i>
+                </span>
+                <span class="custom-grid-part">
+                    <i class="fas fa-th-large"></i>
+                </span>
+                <div class="facetedSearch-close">
+                </div>
+            </div>
+            {{> components/products/filter sort=pagination.category.sort}}
+        </div>
+        
+    </div>
+</div>
+{{/partial}}
+
+{{#partial "page"}}
+<div class="page">
+    {{#if category.faceted_search_enabled}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else if category.subcategories}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else if category.shop_by_price}}
+        {{#if theme_settings.shop_by_price_visibility}}
+             <aside class="page-sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{/if}}
+    {{/if}}
+    <main class="page-content {{#if category.products.length '<' 4}}custom-product{{/if}}" id="product-listing-container">
+        {{#if category.products}}
+            {{> components/category/product-listing}}
+        {{else}}
+            <div class="container">
+                <p>{{lang 'categories.no_products'}}</p>
+            </div>
+        {{/if}}
+        {{{region name="category_below_content"}}}
+        <div id="previewModal" class="modal modal--large" data-reveal>
+            <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+                <span aria-hidden="true">&#215;</span>
+            </a>
+            <div class="modal-content"></div>
+            <div class="loadingOverlay"></div>
+        </div>
+    </main>
+
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,16 @@
+{{#each categories}}
+    {{#each ../breadcrumbs}}
+        {{#if name "===" ../name}}
+            <div class="sidebarBlock">
+                <h5 class="sidebarBlock-heading">{{../name}}</h5>
+                <ul class="navList">
+                    {{#each ../../children}}
+                        <li class="navList-item">
+                            <a class="navList-action {{#if name  "===" ../../../../category.name}}active{{/if}}" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/if}}
+    {{/each}}
+{{/each}}

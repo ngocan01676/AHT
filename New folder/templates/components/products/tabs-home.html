@@ -1,0 +1,26 @@
+<ul class="tabs" data-tab role="tablist">
+        <li class="tab is-active" role="presentational">
+            <a class="tab-title" href="#tab-related" role="tab" tabindex="0" aria-selected="true" controls="tab-related">New Products</a>
+        </li>
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-slider-2" role="tab" tabindex="0" aria-selected="{{#if product.related_products}}false{{else}}true{{/if}}" controls="tab-slider-2">On Sale</a>
+        </li>
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-slider-3" role="tab" tabindex="0" aria-selected="{{#if product.related_products}}false{{else}}true{{/if}}" controls="tab-slider-3">Updated Products</a>
+        </li>
+</ul>
+
+<div class="tabs-contents-home">
+        <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent is-active" id="tab-related">
+            <h3 class="only-mobile ">New Products</h3>
+            {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+        </div>
+        <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent" id="tab-slider-2">
+            <h3 class="only-mobile ">On Sale</h3>
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        </div>
+        <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent" id="tab-slider-3">
+             <h3 class="only-mobile ">Updated Products</h3>
+            {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+        </div>
+</div>

@@ -1,0 +1,149 @@
+---
+
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+cart: true
+---
+{{#partial "page"}}
+<div class="page">
+    <div class="top-cart">
+        <div class="container">
+            <div class="breadcrum">
+             {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            </div>
+             {{> components/cart/page-title}}
+        </div>
+    </div>
+    <div class="cart-main">
+        <div class="container"> 
+        <main class="page-content-cart" data-cart>
+            <div data-cart-status>
+                {{> components/cart/status-messages}}
+            </div>
+            {{#if cart.items.length}}
+                <div class="loadingOverlay"></div>
+                <div class="cart-colums">
+                    <div data-cart-content class="cart-left">
+                        {{> components/cart/content}}
+                        <div class="content-bottom">
+                            <a href="/swms" class="button-standard">Continue Shopping</a>
+                        </div>
+                    </div>
+                    <div class="cart-right">
+                        <div class="content-cart-right">
+                            <div data-cart-totals>
+                                {{> components/cart/totals}}
+                            </div>
+                            {{#if cart.show_primary_checkout_button}}
+                                <div class="cart-actions">
+                                    <a class="button button-primary btn" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">
+                                        <i class="fas fa-lock"></i>
+                                        {{lang 'cart.checkout.button'}}
+                                    </a>
+                                    {{#if cart.show_multiple_address_shipping}}
+                                        <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
+                                            {{lang 'cart.preview.checkout_multiple'}}
+                                        </a>
+                                    {{/if}}
+                                </div>
+                                <div class="cart-payment">  
+                                    {{#if cart.additional_checkout_buttons}}
+                                        <div class="cart-additionalCheckoutButtons">
+                                            {{#each cart.additional_checkout_buttons}}
+                                                {{{this}}}
+                                            {{/each}}
+                                        </div>
+                                    {{/if}}
+                                </div>
+                            {{else}}
+                                <div class="cart-actions">
+                                    <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="phone-contact">
+                            <a href="tel:1300306604"><i class="far fa-headset"></i></a>
+                            <div>
+                                <h4>Need help?</h4>
+                                <p>Call  <a href="tel:1300306604">1300 306 604</a> for free advice on Safety Compliance Documents</p>
+                            </div>
+                        </div>
+                        <!-- <div class="side-bar sidebar_desktop" id="side_bar_product">
+                            <p><strong>What people are saying</strong></p>
+                            <ul>
+                                <li>
+                                    <span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingEmpty"><i class="far fa-star"></i></span>
+                                    </span>
+                                <p>"A great jumping off point for ensuring that our SWMS covers everything. It certainly highlighted deficiencies in our current documents. " - <i>Renee</i></p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingEmpty"><i class="far fa-star"></i></span>
+                                    </span>
+                                <p>"A great jumping off point for ensuring that our SWMS covers everything. It certainly highlighted deficiencies in our current documents. " - <i>Renee</i></p>
+                                </li>
+                                <li>
+                                    <span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingFull"><i class="fas fa-star"></i></span>
+                                        <span class="icon icon--ratingEmpty"><i class="far fa-star"></i></span>
+                                    </span>
+                                <p>"A great jumping off point for ensuring that our SWMS covers everything. It certainly highlighted deficiencies in our current documents. " - <i>Renee</i></p>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <div class="testimonial-review-vertical"></div>
+                    </div>
+                    <div class="wp-content-left">
+                        <div class="custom-cart-products home-product">
+                            {{> components/products/best-sell products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+                        </div>
+                        <div class="content-static">
+                            <h4>Frequently asked questions</h4>
+                            <div>
+                                <div>
+                                    <h4>When will I receive my documents?</h4>
+                                    <p>Your purchased products will be emailed to you immediately upon receipt of payment from our online store.</p>
+                                </div>
+                                <div>
+                                    <h4>What payment methods to you accept?</h4>
+                                    <p>We accept payment via Credit Card, including Visa, MasterCard and American Express; Paypal and Direct Bank Deposit. All credit card payments are processed securely.</p>
+                                </div>
+                                <div>
+                                    <h4>Do you have a refund policy?</h4>
+                                    <p>At SafetyCulture every effort is made to ensure our products are of the highest quality and are written with Australian best practices in mind. It is our policy to ensure all our products match the product descriptions listed on our website. If for any reason you are dissatisfied with the quality of our products, please let us know immediately and we will endeavour to rectify the problem promptly. If this does not meet your satisfaction a refund will be offered within 7 days of purchase. If you prefer an alternative to a refund, a store credit may be offered. We ask that you please choose carefully before making your purchase as we do not refund for incorrect choice.</p>
+                                    <p>Have more questions? Check out the  <a href="/faqs/">more frequently asked questions here</a>  or contact us via phone on 1300 306 604 or email <a href="mailto:info@safetyculture.com.au">info@safetyculture.com.au</a>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+            <div class="content-empty">
+                <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
+            </div>
+            {{/if}}
+        </main>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

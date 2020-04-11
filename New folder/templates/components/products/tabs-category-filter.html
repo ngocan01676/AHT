@@ -1,0 +1,31 @@
+<ul class="tabs" data-tab role="tablist">
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-related" role="tab" tabindex="0" aria-selected="true" controls="tab-related"><i class="fal fa-filter"></i>Filter Results</a>
+        </li>
+        <li class="tab" role="presentational">
+            <a class="tab-title" href="#tab-slider-2" role="tab" tabindex="0" aria-selected="" controls="tab-slider-2"> Sort by</a>
+        </li>
+</ul>
+
+<div class="tabs-contents-home">
+        <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent" id="tab-related">
+            {{#if category.faceted_search_enabled}}
+                <aside class="page-sidebar" id="faceted-search-container">
+                    {{> components/category/sidebar}}
+                </aside>
+            {{else if category.subcategories}}
+                <aside class="page-sidebar" id="faceted-search-container">
+                    {{> components/category/sidebar}}
+                </aside>
+            {{else if category.shop_by_price}}
+                {{#if theme_settings.shop_by_price_visibility}}
+                     <aside class="page-sidebar" id="faceted-search-container">
+                        {{> components/category/sidebar}}
+                    </aside>
+                {{/if}}
+            {{/if}}
+        </div>
+        <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent" id="tab-slider-2">
+            {{> components/products/filter sort=pagination.category.sort}}
+        </div>
+</div>

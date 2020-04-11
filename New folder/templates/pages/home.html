@@ -1,0 +1,63 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+        summary: 500
+---
+
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+
+<div class="main full">
+    {{{region name="home_below_top_products"}}}
+    <!-- {{> components/custom-review/review-horizontal}} -->
+    <div class="testimonial-banner-bottom"></div>
+</div>
+{{/partial}}
+{{#partial "product-home"}}
+    <div class="product-home-page">
+        <div class="container">
+            <div class="home-product">
+                <h4>{{lang 'products.products-home' }}</h4>
+                {{> components/products/tabs-home }}
+            </div>
+        </div>
+    </div>
+{{/partial}}
+{{#partial "page-blog"}}
+<div class="section-home">
+    <div class="container">
+        <div class="blog-home">
+    <h4>Docs by SafetyCulture Blog</h4>
+    <div class="content-blog">
+    {{#each blog.recent_posts}}
+        <div class="item">
+            <a href="{{url}}">
+            <img src="{{getImage thumbnail 'use_default_sizes=true'}}" alt="{{thumbnail.alt}}">
+            </a>
+            <div class="content-text">
+                <h5><a href="{{url}}">{{title}}</a></h5>
+                <p>{{summary}}</p>
+                <a href="{{url}}" class="btn button button-primary btn-primary  btn-blog">read more</a>
+            </div>
+            
+        </div>
+    {{/each}}
+    </div>
+    </div>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}
